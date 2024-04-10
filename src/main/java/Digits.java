@@ -7,11 +7,12 @@ public class Digits
 
 	public Digits(int num)
 	{
-		while(num>9){
-			digitList.add(0, num%10);
-			num=num/10;
+		int number = num;
+		while(number>9){
+			digitList.add(0, number%10);
+			number = number/10;
 		}
-		digitList.add(0,num);
+		digitList.add(0,number);
 	    
 	}
 
@@ -19,7 +20,7 @@ public class Digits
 	{
 		for(int i = 0; i < digitList.size(); i++){
 			if(digitList.get(i-1)>digitList.get(i)){
-				return false
+				return false;
 			}
 		}
 		return true;
