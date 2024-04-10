@@ -7,19 +7,18 @@ public class Digits
 
 	public Digits(int num)
 	{
-		int number = num;
-		while(number>9){
-			digitList.add(0, number%10);
-			number = number/10;
+		while(num>9){
+			digitList.add(0, num%10);
+			num = num/10;
 		}
-		digitList.add(0,number);
+		digitList.add(0,num);
 	    
 	}
 
 	public boolean isStrictlyIncreasing()
 	{
 		for(int i = 1; i < digitList.size(); i++){
-			if(digitList.get(i-1)>digitList.get(i)){
+			if(digitList.get(i-1)>=digitList.get(i)){
 				return false;
 			}
 		}
